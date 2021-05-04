@@ -1,6 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+function redirectTohttps() {
+
+if($_SERVER[‘HTTPS’]!=”on”) {
+
+$redirect= “https://”.$_SERVER[‘HTTP_HOST’].$_SERVER[‘REQUEST_URI’];
+
+header(“Location:$redirect”); } }
+
+?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
