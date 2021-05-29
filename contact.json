@@ -29,7 +29,7 @@
         "required": true  
     },
     "fax": {
-        "value": "988710753",
+        "value": "",
         "required": false   
     },
     "job_title": {
@@ -53,7 +53,7 @@
         "required": false
     },
     "phone": {
-        "value": "988710753",
+        "value": "+84988710753",
         "required": true   
     }
 }
