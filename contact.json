@@ -53,7 +53,7 @@
         "required": false
     },
     "phone": {
-        "value": "+84988710753",
+        "value": "+84.988710753",
         "required": true   
     }
 }
