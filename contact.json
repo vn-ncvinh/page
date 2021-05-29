@@ -1,0 +1,59 @@
+{
+    "address1": {
+        "value": "Quang Trung, Ha Dong",
+        "required": true
+    },
+    "address2": {
+        "value": "Ha Dong",
+        "required": false
+    },
+    "city": {
+        "value": "Ha Noi",
+        "required": true
+    },
+    "country": {
+        "value": "VN",
+        "required": true,
+        "options": []   
+    },
+    "postal_code": {
+        "value": "100000",
+        "required": true  
+    },
+    "state": {
+        "value": "HN",
+        "required": true
+    },
+    "email": {
+        "value": "vn.ncvinh@gmail.com",
+        "required": true  
+    },
+    "fax": {
+        "value": "988710753",
+        "required": false   
+    },
+    "job_title": {
+        "value": "",
+        "required": false  
+    },
+    "name_first": {
+        "value": "Nguyen Cong",
+        "required": true  
+    },
+    "name_last": {
+        "value": "Vinh",
+        "required": true  
+    },
+    "name_middle": {
+        "value": "",
+        "required": false
+    },
+    "organization": {
+        "value": "",
+        "required": false
+    },
+    "phone": {
+        "value": "988710753",
+        "required": true   
+    }
+}
