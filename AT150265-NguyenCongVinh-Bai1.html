@@ -1,0 +1,255 @@
+<html>
+    <head>
+        <title>Bài 1 - Nguyễn Công Vĩnh</title>
+        <meta charset="UTF-8">
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: wheat;
+                align: center;
+            }
+            #copyright{
+                font-family: 'Courier New', Courier, monospace;
+            }
+            td{
+                text-align: left;
+            }
+            input[type=text], input[type=date], input[type=email], input[type=password], select {
+                width: 400px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            button {
+                width: 100%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            .show {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+                /* Modal Content */
+            .show-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+
+                /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover, .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+        <script>
+            window.onclick = function(event) {
+                if (event.target == show) {
+                    show.style.display = "none";
+                }
+            }
+            function checkphone(){
+                var phone = document.getElementById("phone").value
+                var dauso = phone.charAt(0) + phone.charAt(1)
+                if (dauso==="09"){
+                    if (phone.length==10){
+                        document.getElementById("thongbaophone").innerHTML = "OK";
+                        document.getElementById("thongbaophone").style.color="green"
+                    } else {
+                        document.getElementById("thongbaophone").innerHTML = "Không đúng";
+                        document.getElementById("thongbaophone").style.color="#ff0000"
+                    }
+                }else{
+                    if(dauso==="01"){
+                        if (phone.length==11){
+                        document.getElementById("thongbaophone").innerHTML = "OK";
+                        document.getElementById("thongbaophone").style.color="green"
+                    } else {
+                        document.getElementById("thongbaophone").innerHTML = "Không đúng";
+                        document.getElementById("thongbaophone").style.color="#ff0000"
+                    }
+                    } else {
+                        document.getElementById("thongbaophone").innerHTML = "Không đúng";
+                        document.getElementById("thongbaophone").style.color="#ff0000"
+                    }
+                }
+
+            }
+
+            function checkmail(){
+                var mail = document.getElementById("email").value
+                if(mail.includes("@")&&mail.split("@")[1].includes(".")){
+                    document.getElementById("thongbaomail").innerHTML = "OK";
+                    document.getElementById("thongbaomail").style.color="green"
+                } else {
+                    document.getElementById("thongbaomail").innerHTML = "Không đúng";
+                    document.getElementById("thongbaomail").style.color="#ff0000"
+                }
+            }
+
+            function checkpass(){
+                pass = document.getElementById("password").value
+                repass = document.getElementById("repassword").value
+
+                if(repass===pass){
+                    document.getElementById("thongbaopass").innerHTML="OK"
+                    document.getElementById("thongbaopass").style.color="green"
+                } else {
+                    document.getElementById("thongbaopass").innerHTML="Không đúng"
+                    document.getElementById("thongbaopass").style.color="#ff0000"
+                }
+            }
+
+
+            function showinfo(){
+                var info = document.getElementById("info")
+                var show = document.getElementById("show")
+                var kienthuc =""
+                if (document.getElementById("kienthuc1").checked){
+                    if(kienthuc.length>0){
+                        kienthuc = kienthuc + ", " + document.getElementById("kienthuc1").value
+                    } else {
+                        kienthuc = kienthuc + " " + document.getElementById("kienthuc1").value
+                    }
+                    
+                }
+                if (document.getElementById("kienthuc2").checked){
+                    if(kienthuc.length>0){
+                        kienthuc = kienthuc + ", " + document.getElementById("kienthuc2").value
+                    } else {
+                        kienthuc = kienthuc + " " + document.getElementById("kienthuc2").value
+                    }
+                }
+                if (document.getElementById("kienthuc3").checked){
+                    if(kienthuc.length>0){
+                        kienthuc = kienthuc + ", " + document.getElementById("kienthuc3").value
+                    } else {
+                        kienthuc = kienthuc + " " + document.getElementById("kienthuc3").value
+                    }
+                }
+                info.innerHTML = "Họ và tên: " + document.getElementById("fullname").value + "<br>Ngày sinh: " + document.getElementById("dob").value + "<br>Giới Tính: " + document.getElementById("gender").value +"<br> Quê quán: " + document.getElementById("address").value +"<br> Quốc tịch: "+ document.getElementById("nationality").value +"<br> Số điện thoại: " + document.getElementById("phone").value +"<br> Email: " + document.getElementById("email").value +"<br> Mật khẩu: " + document.getElementById("password").value +"<br>Kiến thức đã biết: " + kienthuc +"<br><br><br>Code by NCV"
+                show.style.display = "block";
+
+            }
+
+            function closeinfo(){
+                var show = document.getElementById("show")
+                show.style.display = "none";
+            }
+
+        </script>
+    </head>
+    <body>
+        <p id="copyright">Bài 1 &copy; Nguyễn Công Vĩnh</p>
+        <div id="form" align=center>
+            <h1 style="font-family: Arial, Helvetica, sans-serif;">Đăng Ký</h1>
+            <table align="center">
+                <tr>
+                    <td>Họ Tên: </td>
+                    <td><input type="text" id="fullname" name ="fullname" maxlength="30" ></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh:</td>
+                    <td><input type="date" id="dob" name="dob" min="1981-01-01" max="2021-06-11" value="2000-05-28"></td>
+                </tr>
+                
+                <tr>
+                    <td>Giới tính:</td>
+                    <td><input type="radio" id="gender" name="gender" value="Nam" checked > Nam
+                        <input type="radio" id="gender" name="gender" value="Nữ"> Nữ
+                      </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quê quán: </td>
+                    <td><input type="text" id="address" name ="address" maxlength="100"></td>
+                </tr>
+                <tr>
+                    <td>Quốc tịch: </td>
+                    <td>
+                        <select name="nationality" id="nationality">
+                            <option value="Việt Nam">Việt Nam</option>
+                            <option value="Hoa Kỳ">Hoa Kỳ</option>
+                            <option value="Nhật Bản">Nhật Bản</option>
+                            <option value="Trung Quốc">Trung Quốc</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại:</td>
+                    <td>
+                        <input type="text" maxlength="11" id="phone" name="phone" onkeyup="checkphone()">
+                    </td>
+                    <td><p id="thongbaophone"></p></td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="email" id="email" name ="email" onkeyup="checkmail()"></td>
+                    <td><p id="thongbaomail"></p></td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu: </td>
+                    <td><input type="password" id="password" name ="password" minlength="5" onkeyup="checkpass()"></td>
+                </tr>
+                <tr>
+                    <td>Nhập lại mật khẩu: </td>
+                    <td><input type="password" id="repassword" name ="repassword" minlength="5" onkeyup="checkpass()"></td>
+                    <td><p id="thongbaopass"></p></td>
+                </tr>
+                <tr>
+                    <td>Kiến thức đã biết</td>
+                    <td>
+                        <input type="checkbox" id="kienthuc1" name="kienthuc1" value="Lập trình"> Lập trình <br>
+                        <input type="checkbox" id="kienthuc2" name="kienthuc2" value="Văn phòng"> Văn phòng <br>
+                        <input type="checkbox" id="kienthuc3" name="kienthuc3" value="Đồ hoạ"> Đồ hoạ <br>
+                    </td>
+                </tr>
+
+            </table>
+            <button type="submit" id="btnshow" onclick="showinfo()" style="width: 100px;">Đăng ký</button>
+        </div>
+        <div id="show" class="show">
+
+            <!-- Modal content -->
+            <div class="show-content">
+              <span class="close" onclick="closeinfo()">&times;</span>
+              <p id=info>Chưa có gì</p>
+            </div>
+          
+          </div>
+    </body>
+</html>
