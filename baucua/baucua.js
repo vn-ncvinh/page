@@ -1,4 +1,4 @@
-const libimg = ["img/ca.jpg", "img/tom.jpg", "img/cua.jpg", "img/ga.jpg", "img/huou.jpg", "img/ruou.jpg",]
+const libimg = ["img/ca.jpg", "img/tom.jpg", "img/cua.jpg", "img/ga.jpg", "img/huou.jpg", "img/bau.jpg"]
 function random(i) {
     setTimeout(function () {
         document.getElementById("img1").src = libimg[Math.floor(Math.random() * libimg.length)];
