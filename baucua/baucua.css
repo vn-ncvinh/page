@@ -1,0 +1,46 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.button {
+    margin-top: 2in;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.button1 {
+    background-color: red;
+    color: white;
+
+}
+
+.button1:hover {
+    background-color: #f44336;
+    color: white;
+    border: 2px solid black;
+}
